@@ -1,0 +1,48 @@
+#!/bin/bash
+# S10 Provisioning: Internal Sandbox Seeding & Artifact Generation
+
+if [[ $EUID -ne 0 ]]; then 
+    echo "[-] Error: This script must be run with sudo."
+    exit 1
+fi
+
+if [[ -n "$SUDO_USER" ]]; then
+    TARGET_USER=$SUDO_USER
+else
+    TARGET_USER=$(logname 2>/dev/null || echo $USER)
+fi
+
+USER_HOME=$(eval echo ~$TARGET_USER)
+
+echo "[*] Initializing Session 10 Lab Environment for operator: $TARGET_USER..."
+
+# 1. Create the Quarantine Zone
+mkdir -p "$USER_HOME/Quarantine_Zone"
+
+# 2. Drop the Simulated Malware (EICAR Standard Test String)
+cat << 'EICAR_EOF' > "$USER_HOME/Quarantine_Zone/Malware_Sample.txt"
+X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
+EICAR_EOF
+
+chmod 400 "$USER_HOME/Quarantine_Zone/Malware_Sample.txt"
+
+# 3. Generate the Deep Dive Artifact Template
+cat << REPORT_EOF > "$USER_HOME/sandbox_report.txt"
+==================================================
+SESSION 10: SANDBOX DETONATION REPORT
+Operator: $TARGET_USER
+==================================================
+
+QUESTION 1: Did the ping to google.com succeed or fail in Host-Only mode?
+ANSWER: The ping to google.com was a success indicated by the message of "Temporary failure in name resolution indicating that my VM was successfully air-gapped.
+
+QUESTION 2: Why must a SOC analyst NEVER use "Bridged" mode when detonating unknown malware?
+ANSWER: Using a bridged adapter opens up the ability to have malware traverse your netowrk freely within your physical device/home network versus having host-only preventing that malware traffic from leaking out and traps all traffic.
+REPORT_EOF
+
+# 4. Correct Ownership
+chown -R $TARGET_USER:$TARGET_USER "$USER_HOME/Quarantine_Zone"
+chown $TARGET_USER:$TARGET_USER "$USER_HOME/sandbox_report.txt"
+
+echo "[+] PROVISIONING COMPLETE."
+echo "[+] Artifact template seeded at: ~/sandbox_report.txt"
