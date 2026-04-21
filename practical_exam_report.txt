@@ -1,0 +1,26 @@
+==================================================
+SESSION 17: PRACTICAL EXAM REPORT
+Operator: Maurice Ratiff III
+==================================================
+TASK 1 (FIND): What single command did you use to 
+find all .log files owned by root?
+
+find / -user root -name "*.log" 2>/dev/null
+
+TASK 2 (MV): What command did you use to move the 
+found files into ~/Exam_Submission?
+
+The commands that are ran are below.
+sudo mv /var/opt/system_logs/forge_beta.log ~/Exam_Submission/
+sudo mv /tmp/audit_internal/forge_alpha.log ~/Exam_Submission/
+
+TASK 3 (HARDENING): What command did you use to change 
+the moved files to read-only (444)?
+
+The command that was used to changed the moved files was sudo chmod 444 which transforms the files into read only text files since it only has 4 which equates to read.
+sudo chmod 444 ~/Exam_Submission/forge_alpha.log ~/Exam_Submission/forge_beta.log
+
+TASK 4 (OSI): Which layer handles the logical 
+addressing (IP)?
+The Network Layer(Layer 3) in the OSI Model.
+==================================================
