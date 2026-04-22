@@ -45,16 +45,14 @@ with open(log_path, "a") as f:
  78aa3fd46ff8   nginx       "/docker-entrypoint.…"   52 seconds ago   Up 50 seconds   0.0.0.0:8082->80/tcp, [::]:8082->80/tcp   titan_frontend
 titan_backend       mysql:8.0   Up 10 minutes  3306/tcp, 33060/tcp
 ## 4. Executive Summary
-This looks like a solid draft, Maurice. You've effectively navigated the "Forge" and addressed every technical hurdle from SSH socket activation issues to Docker port collisions.
 
-Here is the completed content for your Security Architecture Document based on the successful configurations we just verified. You can copy these directly into your nano ~/HardenedOutpost_SAD.md session.
 
 1. Perimeter Hardening (UFW & SSH)
 SSH Status: Root login and Password Authentication have been disabled. Access is strictly limited to Public Key Authentication. The ssh.socket has been reloaded to enforce these policies.
-
+sudo systemctl restart ssh.
 Firewall Logic: UFW is configured to Deny all incoming traffic by default. Explicit Allow rules are active for Port 22/tcp (Management) and Port 8082/tcp (Application Frontend).
 
-2. The Automated Auditor (Python)
+3. The Automated Auditor (Python)
 Script Logic:
 
 Python
@@ -74,7 +72,6 @@ Network Isolation: The architecture utilizes a dual-bridge network strategy. The
 
 Stack Health:
 
-Plaintext
 NAME                IMAGE       STATUS         PORTS
 titan_backend       mysql:8.0   Up 10 minutes  3306/tcp, 33060/tcp
 titan_frontend      nginx       Up 10 minutes  0.0.0.0:8082->80/tcp
