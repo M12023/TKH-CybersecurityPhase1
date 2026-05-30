@@ -2,8 +2,7 @@
 
  M12023 - Maurice Ratiff III · Class of 2026
 
-> *"The more I learn, the more I realize how much I don't know."*
-> — Richard Feynman
+
 
 ---
 
@@ -90,11 +89,11 @@ TKH-CybersecurityPhase1/
 | 04 | Mar 30–Apr 1 | Virtualization · Docker · Container Security · Network Segmentation | ✅ Complete |
 | 05 | Apr 6–8 | Identity · Active Directory · Windows Server Core | ✅ Complete |
 | 06 | Apr 13–15 | Forge Capstone · Hybrid Architecture · Secure Deployment | ✅ Complete |
-| 07 | [Dates] | Reconnaissance · OSINT · Vulnerability Analysis | ✅ Complete |
-| 08 | [Dates] | Exploitation · Privilege Escalation · Post-Exploitation | ✅ Complete |
-| 09 | [Dates] | Web Application Security · SQLi · XSS · API Exploitation | ✅ Complete |
-| 10 | [Dates] | Digital Forensics · Incident Response · SIEM | ✅ Complete |
-| 11 | [Dates] | Network Defense · IDS · EDR · Perimeter Hardening | ✅ Complete |
+| 07 | Apr 20-22 | Reconnaissance · OSINT · Vulnerability Analysis | ✅ Complete |
+| 08 | Apr 27-29| Exploitation · Privilege Escalation · Post-Exploitation | ✅ Complete |
+| 09 | May 4-6 | Web Application Security · SQLi · XSS · API Exploitation | ✅ Complete |
+| 10 | May 11-15 | Digital Forensics · Incident Response · SIEM | ✅ Complete |
+| 11 | May 18-20| Network Defense · IDS · EDR · Perimeter Hardening | ✅ Complete |
 | 12 | May 30 | Portfolio Audit | ✅ Complete |
 
 ---
