@@ -1,7 +1,7 @@
 # Phase 1 Final Reckoning — TEPP Post-Mortem
 **Operator:** Maurice Ratiff III
 **Date:** May 30, 2026
-**Repository:** [Your GitHub repo URL]
+**Repository:** https://github.com/M12023/TKH-CybersecurityPhase1/edit/main/week-12/tepp_postmortem.md
 **TKH Innovation Fellowship 2026 | Phase 1 | Cybersecurity**
 
 ---
