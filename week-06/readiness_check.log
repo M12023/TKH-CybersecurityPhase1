@@ -1,0 +1,21 @@
+==================================================
+SESSION 16: READINESS INVENTORY
+==================================================
+Operator: Maurice Ratiff III
+Date: 04/20/26
+
+Confidence Audit (Yes/No):
+1. Nmap (Network Scanning): Yes
+2. Docker (Containerization): Yes
+3. Linux Hardening (UFW/chmod): Yes
+4. VS Code Remote-SSH: Yes
+
+Identify your weakest area and your plan to review it:
+Ensuring when running the docker ps log also running the flag a so -a 
+in order to gain access to all current docker containers running that was how I was able to 
+detect and eliminate the ghost_web. Also, getting used to understanding and running the ufw status in order to track
+when network layer activity is denied. So, will go review and create a catalog and research commands and their importance
+also, learned how to restore SSH by opening /etc/ssh/ssh.config file to re-enable password authenticator and permit root login.
+Continuing to research and building more consistency to more systematic reviews will build more muscle memory and build a active reputation 
+for bug fixes and malware detection in a manner to explain to the chief information security officer. Log Complete.
+==================================================
