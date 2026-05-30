@@ -1,0 +1,13 @@
+default via 192.168.10.1 dev enp0s3 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+172.18.0.0/16 dev br-0f2d8105494a proto kernel scope link src 172.18.0.1 linkdown 
+172.19.0.0/16 dev br-ce956d2ae9d9 proto kernel scope link src 172.19.0.1 linkdown 
+192.168.10.0/24 dev enp0s3 proto kernel scope link src 192.168.10.150 
+
+tcpdump: data link type LINUX_SLL2
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on any, link-type LINUX_SLL2 (Linux cooked v2), snapshot length 262144 bytes
+
+0 packets captured
+0 packets received by filter
+0 packets dropped by kernel
